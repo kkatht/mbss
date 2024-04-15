@@ -1,22 +1,27 @@
-<%= form_with model: モデル名, local: true do |f|%>
+<%= form_with model: @item, local: true do |f|%>
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :syohinmei, "商品名" %><br />
+    <%= f.text_field :syohinmei, class: :form__text, id:"prototype_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.label :syohincode, "商品コード" %><br />
+    <%= f.text_field :syohincode, id:"prototype_catch_copy" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
+    <%= f.label :suuryo, "数量" %><br />
+    <%= f.text_field :suuryo, id:"prototype_concept" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :comment, "備考" %><br />
+    <%= f.text_area :comment, class: :form__text, id:"prototype_concept" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
+    <%= f.label :image, "商品画像" %><br />
+    <%= f.file_field :image, id:"prototype_image" %>
   </div>
 
   <div class="actions">
