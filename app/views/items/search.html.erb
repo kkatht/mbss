@@ -1,0 +1,13 @@
+<main class="main">
+  <div class="inner">
+      <%= form_with(url: search_items_path, local: true, method: :get, class: "search_container") do |form| %>
+        <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+      <div class="card__wrapper">
+        <% @items.each do |item| %>
+          <%= render partial: "prototype", locals: { item: item } %>
+        <% end %>
+      </div>
+  </div>
+</main>

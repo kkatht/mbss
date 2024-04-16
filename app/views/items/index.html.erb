@@ -7,6 +7,14 @@
         <%= link_to "#{current_user.tenpomei}" , root_path, class: :greeting__link%>
       </div>
     <% end %>
+
+<%# 検索機能 %>
+    <%= form_with(url: search_items_path, local: true, method: :get, class: "search_container") do |form| %>
+      <%= form.text_field :keyword, placeholder: "商品コード検索", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+<%# 検索機能 %>
+
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
